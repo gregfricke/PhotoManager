@@ -43,9 +43,10 @@
   <ItemGroup>
     <Compile Include="BowlingGame.fs" />
     <None Include="Script.fsx" />
-    <Compile Include="Fibonacci.fs" />
     <Compile Include="FileAttributeLoader.fs" />
     <Compile Include="FileLoader.fs" />
+    <None Include="Test.fsx" />
+    <Compile Include="Fibonacci.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
