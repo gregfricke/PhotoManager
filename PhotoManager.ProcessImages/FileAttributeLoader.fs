@@ -7,7 +7,7 @@ open System.Windows.Media.Imaging
 
 module FileAttributeLoader=
     let AsyncGetFiles(directory) = System.IO.Directory.GetFiles(directory) |> Array.toList
-    let x d = System.IO.File.GetAttributes(d.Head)
+    //let x d = System.IO.File.GetAttributes(d.Head)
     let firstFileAttributes = System.IO.File.GetAttributes(AsyncGetFiles("C:\Users\gregory_fricke\Desktop\pics").Head)
     let firstFileProps = System.IO.File.GetAttributes(AsyncGetFiles("C:\Users\gregory_fricke\Desktop\pics").Head)
       
