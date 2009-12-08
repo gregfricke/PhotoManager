@@ -1,16 +1,17 @@
 ﻿namespace PhotoManager.ProcessImages
 
 open System
+open System.Net
 open System.IO
 open System.Windows.Media
 open System.Windows.Media.Imaging
 
-module FileAttributeLoader=
-    let AsyncGetFiles(directory) = System.IO.Directory.GetFiles(directory) |> Array.toList
-    //let x d = System.IO.File.GetAttributes(d.Head)
-    let firstFileAttributes = System.IO.File.GetAttributes(AsyncGetFiles("C:\Users\gregory_fricke\Desktop\pics").Head)
-    let firstFileProps = System.IO.File.GetAttributes(AsyncGetFiles("C:\Users\gregory_fricke\Desktop\pics").Head)
-      
+module FileManager = 
+    let GetFilesFromDirectory directory = 
+        Directory.GetFiles(directory) 
+        |> Array.map(fun file->file)
+        //|> Array.map (fun file->File.GetAttributes(file)) |>
+                            
     let image = new FileStream(@"C:\Users\gregory_fricke\Desktop\pics\CSC_0086.JPG",FileMode.Open,FileAccess.Read,FileShare.Read)
 
     let decoder = new JpegBitmapDecoder(image,BitmapCreateOptions.PreservePixelFormat,BitmapCacheOption.Default)
